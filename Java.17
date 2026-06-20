@@ -1,0 +1,36 @@
+import java.util.ArrayList;
+class StringList {
+    ArrayList<String> list = new ArrayList<>();
+    void addElement(String str) {
+        list.add(str);
+        System.out.println(str + " added.");
+    }
+    void removeElement(String str) {
+        if (list.remove(str))
+            System.out.println(str + " removed.");
+        else
+            System.out.println(str + " not found.");
+    }
+    void searchElement(String str) {
+        if (list.contains(str))
+            System.out.println(str + " found in the list.");
+        else
+            System.out.println(str + " not found in the list.");
+    }
+    void display() {
+        System.out.println("List: " + list);
+    }
+    public static void main(String[] args) {
+        StringList obj = new StringList();
+
+        obj.addElement("Apple");
+        obj.addElement("Banana");
+        obj.addElement("Mango");
+        obj.display();
+        obj.searchElement("Banana");
+        obj.searchElement("Orange");
+        obj.removeElement("Banana");
+        obj.removeElement("Orange");
+        obj.display();
+    }
+}
